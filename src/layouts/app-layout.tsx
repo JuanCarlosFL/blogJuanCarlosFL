@@ -8,7 +8,7 @@ interface Props {
   pathname: string;
 }
 
-export const AppLayout: React.StatelessComponent<Props> = props => {
+export const AppLayout: React.FC<Props> = props => {
   const {
     seoComponent,
     children,
