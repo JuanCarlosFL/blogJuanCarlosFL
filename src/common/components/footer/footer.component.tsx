@@ -12,7 +12,7 @@ export const Footer: React.FunctionComponent<Props> = props => {
     <div className={cx(classes.root, className)}>
       <div className={classes.line} />
       <footer className={classes.footer}>
-        Copyright 2019 Lemoncode. All Rights Reserved.
+        Copyright 2020 Juan Carlos Fuentes Lamas. All Rights Reserved.
       </footer>
     </div>
   );

@@ -1,18 +1,17 @@
 import React from 'react';
-import { css } from '@emotion/css';
+import { PageRendererProps } from 'gatsby';
 import { SEO } from 'common/components';
+import { AppLayout } from 'layouts';
+import { Home } from 'pods/home';
 
-const root = (color) => css`
-  background-color: ${color};
-  color: white;
-  font-size: 4rem;
-  font-family: 'Open Sans';
-  padding: 2rem;
-`;
 
-const IndexPage = () => {
+const IndexPage: React.FunctionComponent<PageRendererProps> = props => {
+   const { location } = props; // Ruta en la que nos encontramos actualmente
+
    return (
-     <>
+    <AppLayout
+      pathname={location.pathname}
+      seoComponent={
        <SEO
          title="Home"
          keywords={[
@@ -25,8 +24,10 @@ const IndexPage = () => {
            '.net 5',
          ]}
        />
-       <div className={root('tomato')}>Hello from Gatsby</div>
-     </>
+        }
+        >
+        <Home />
+        </AppLayout>
    );
  };
 
