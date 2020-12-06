@@ -9,5 +9,5 @@ export const root = css`
 `;
 
 export const imageContainer = css`
-  width: 50%;
+  width: 25%;
 `;

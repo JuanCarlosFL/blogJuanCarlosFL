@@ -9,8 +9,8 @@ const query = graphql`
   query {
     homeLogo: file(relativePath: { eq: "yo.png" }) {
       childImageSharp {
-        fixed{
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -21,7 +21,13 @@ export const Home: React.FunctionComponent = () => {
   return (
     <div className={classes.root}>
       <Typography variant="h3">Bienvenido a mi sitio web</Typography>
-      <Image fixed={homeLogo.childImageSharp.fixed} />
+      <div className={classes.imageContainer}>
+        <Image fluid={homeLogo.childImageSharp.fluid} />
+      </div>
+      <Typography variant="subtitle1">
+        Javascript | React | .Net | SQL
+      </Typography>
+
       <Typography variant="h4">
         Echa un vistazo a mi <Link to={routes.blog}>blog</Link>
       </Typography>
