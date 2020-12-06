@@ -52,15 +52,18 @@ module.exports = {
       },
     },
     {
-        resolve: 'gatsby-transformer-remark',
-        options: {
-          plugins: [
-            {
-              resolve: 'gatsby-remark-images-contentful',
-            },
-          ],
-        },
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images-contentful',
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+          },
+        ],
       },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

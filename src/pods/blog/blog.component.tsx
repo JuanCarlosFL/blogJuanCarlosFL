@@ -20,18 +20,20 @@ export const Blog: React.FunctionComponent = () => {
   const { postListQuery } = useStaticQuery(query);
   return (
     <div className={classes.root}>
-      <Typography variant="h1">Blog Page</Typography>
-      <div className={classes.posts}>
-      {postListQuery.nodes.map(node => (
-         <Link
-          className={classes.postTitle}
-          to={`/${node.path}`}
-          key={node.title}
-        >
-          <Typography variant="body1">{node.title}</Typography>
-        </Link>
-        ))}
-      </div>
+      <Typography variant="h2">Blog</Typography>
+      <Typography variant="h4">Lista de posts</Typography>
+          <div className={classes.posts}>
+          {postListQuery.nodes.map(node => (
+            <Link
+              className={classes.postTitle}
+              to={`/${node.path}`}
+              key={node.title}
+              style={{ textDecoration: 'none'}}
+            >
+              <Typography variant="body1">{node.title}</Typography>
+            </Link>
+            ))}
+          </div>
     </div>
   );
 };
